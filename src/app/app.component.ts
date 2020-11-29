@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
+const defaultLang = 'en';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'link-manager';
+
+  constructor(
+    public translate: TranslateService
+  ) {
+    translate.setDefaultLang(defaultLang);
+  }
 }

@@ -1,0 +1,15 @@
+{
+  "pages": {
+    "link_manage": {
+      "select_type_placeholder": "type",
+      "input_value_placeholder": "host value",
+      "submit_button": "add",
+      "column_type_title": "type",
+      "column_value_title": "value",
+      "column_actions_title": "link actions"
+    }
+  },
+  "navbar": {
+    "title": "link manager"
+  }
+}

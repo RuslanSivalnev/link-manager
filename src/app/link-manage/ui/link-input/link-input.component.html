@@ -1,0 +1,20 @@
+<form [formGroup]="createLinkForm">
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{'pages.link_manage.select_type_placeholder' | translate | titlecase}}</mat-label>
+    <mat-select>
+      <mat-option [value]="option.value" *ngFor="let option of selectTypes">{{ option.title | uppercase }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{'pages.link_manage.input_value_placeholder' | translate | titlecase}}</mat-label>
+    <input matInput type="text" formControlName="value">
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">
+    <mat-icon>add</mat-icon>
+    <span>{{'pages.link_manage.submit_button' | translate | titlecase}}</span>
+  </button>
+
+</form>

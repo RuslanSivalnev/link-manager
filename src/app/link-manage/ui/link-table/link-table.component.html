@@ -1,0 +1,29 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Type Column -->
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef> {{'pages.link_manage.column_type_title' | translate | titlecase}} </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.type | uppercase}} </mat-cell>
+  </ng-container>
+
+  <!-- Value Column -->
+  <ng-container matColumnDef="value">
+    <mat-header-cell *matHeaderCellDef>{{'pages.link_manage.column_value_title' | translate | titlecase}} </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>{{'pages.link_manage.column_actions_title' | translate | titlecase}} </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button>
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
