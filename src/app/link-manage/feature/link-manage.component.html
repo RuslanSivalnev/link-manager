@@ -1,4 +1,4 @@
 <section>
-  <app-link-input [createLinkForm]="createLinkForm"></app-link-input>
+  <app-link-input (selectTypeEvent)="selectTypeHandler($event)" [createLinkForm]="createLinkForm"></app-link-input>
   <app-link-table></app-link-table>
 </section>

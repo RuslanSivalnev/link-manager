@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { LinkTypes } from '../../models/link-type-resolver';
 
 @Component({
   selector: 'app-link-input',
@@ -7,7 +8,8 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./link-input.component.scss']
 })
 export class LinkInputComponent implements OnInit {
-  public selectTypes = [{ value: 'ip', title: 'ip' }, { value: 'host', title: 'host' }];
+  public selectTypes = [{ value: LinkTypes.IP, title: 'ip' }, { value: LinkTypes.HOST, title: 'host' }];
+  @Output() public selectTypeEvent = new EventEmitter();
   @Input() public createLinkForm: FormGroup;
 
   constructor() {
@@ -16,4 +18,11 @@ export class LinkInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public doSelectTypeEvent(type: string): void{
+    this.selectTypeEvent.emit(type);
+  }
+
+  asd() {
+    console.log(this.createLinkForm);
+  }
 }

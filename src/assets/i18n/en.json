@@ -6,7 +6,9 @@
       "submit_button": "add",
       "column_type_title": "type",
       "column_value_title": "value",
-      "column_actions_title": "link actions"
+      "column_actions_title": "link actions",
+      "pattern_error": "Please enter a valid",
+      "required_error": "Field is required"
     }
   },
   "navbar": {
