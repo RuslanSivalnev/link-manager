@@ -1,4 +1,10 @@
 <section>
-  <app-link-input (selectTypeEvent)="selectTypeHandler($event)" [createLinkForm]="createLinkForm"></app-link-input>
-  <app-link-table></app-link-table>
+  <app-link-input
+    (selectTypeEvent)="selectTypeHandler($event)"
+    (submitEvent)="submitHandler()"
+    [createLinkForm]="createLinkForm"></app-link-input>
+  <app-link-table
+    (deleteEvent)="deleteHandler($event)"
+    (editEvent)="editHandler($event)"
+    [links$]="links$"></app-link-table>
 </section>

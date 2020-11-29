@@ -10,6 +10,7 @@ import { LinkTypes } from '../../models/link-type-resolver';
 export class LinkInputComponent implements OnInit {
   public selectTypes = [{ value: LinkTypes.IP, title: 'ip' }, { value: LinkTypes.HOST, title: 'host' }];
   @Output() public selectTypeEvent = new EventEmitter();
+  @Output() public submitEvent = new EventEmitter();
   @Input() public createLinkForm: FormGroup;
 
   constructor() {
@@ -22,7 +23,7 @@ export class LinkInputComponent implements OnInit {
     this.selectTypeEvent.emit(type);
   }
 
-  asd() {
-    console.log(this.createLinkForm);
+  public doSubmit(): void {
+    this.submitEvent.emit();
   }
 }

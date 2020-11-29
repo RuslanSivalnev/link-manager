@@ -4,11 +4,15 @@
       "select_type_placeholder": "type",
       "input_value_placeholder": "host value",
       "submit_button": "add",
+      "edit_button": "edit",
       "column_type_title": "type",
       "column_value_title": "value",
       "column_actions_title": "link actions",
       "pattern_error": "Please enter a valid",
-      "required_error": "Field is required"
+      "required_error": "Field is required",
+      "add_link_success_notification": "Link has been added",
+      "delete_link_success_notification": "Link has been deleted",
+      "edit_link_success_notification": "Link has been edited"
     }
   },
   "navbar": {

@@ -1,5 +1,5 @@
 import { IpTypeModel } from './ip-type.model';
-import { LinkTypeInterface } from '../interfaces/link-type.interface';
+import { LinkTypeInterface } from '../interfaces';
 import { HostTypeModel } from './host-type.model';
 
 export enum LinkTypes {
@@ -15,12 +15,12 @@ export abstract class LinkTypeResolver {
   }
 
   public static getModelOfType(data): LinkTypeInterface {
-    switch (data.type) {
+    switch (data.linkType) {
       case LinkTypes.IP: {
-        return new IpTypeModel(data.value);
+        return new IpTypeModel(data);
       }
       case LinkTypes.HOST: {
-        return new HostTypeModel(data.value);
+        return new HostTypeModel(data);
       }
     }
   }

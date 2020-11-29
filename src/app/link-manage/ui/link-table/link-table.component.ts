@@ -1,16 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface LinkItemInterface {
-  type: string;
-  value: string;
-  actions: string;
-}
-
-const ELEMENT_DATA: LinkItemInterface[] = [
-  { type: '1', value: 'Hydrogen', actions: '' },
-  { type: '2', value: 'Helium', actions: '' },
-  { type: '3', value: 'Lithium', actions: '' }
-];
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LinkInterface } from '../../interfaces';
 
 @Component({
   selector: 'app-link-table',
@@ -18,9 +8,11 @@ const ELEMENT_DATA: LinkItemInterface[] = [
   styleUrls: ['./link-table.component.scss']
 })
 export class LinkTableComponent implements OnInit {
+  @Output() public deleteEvent = new EventEmitter();
+  @Output() public editEvent = new EventEmitter();
+  @Input() public links$: Observable<LinkInterface[]>;
 
-  displayedColumns: string[] = ['type', 'value', 'actions'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['linkType', 'value', 'actions'];
 
   constructor() {
   }
@@ -28,4 +20,11 @@ export class LinkTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public doDeleteEvent(id: string): void {
+    this.deleteEvent.emit(id);
+  }
+
+  public doEditEvent(element: LinkInterface): void {
+    this.editEvent.emit(element);
+  }
 }
